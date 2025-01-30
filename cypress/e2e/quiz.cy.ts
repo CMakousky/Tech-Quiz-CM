@@ -14,7 +14,18 @@ describe('tech quiz', () => {
     });
   });
 
-  context('Answer Questions', () => {
+  context('Answer a Question', () => {
+    it('should display the next question when an answer is submitted', () => {
+      cy.visit('/');
+      cy.get('[data-cy=start-button]').click();
+      const question1 = cy.get('[data-cy=quiz-question-content]');
+      cy.get('[data-cy=button-0]').click();
+      const question2 = cy.get('[data-cy=quiz-question-content]');
+      expect(question1 !== question2);
+    });
+  });
+
+  context('Answer All Questions', () => {
     it('should display the score once 10 questions are answered', () => {
       cy.visit('/');
       cy.get('[data-cy=start-button]').click();
@@ -25,7 +36,7 @@ describe('tech quiz', () => {
     });
   });
 
-  context('Answer Questions Correctly', () => {
+  context('Answer All Questions Correctly', () => {
     beforeEach(() => {
       cy.intercept({
         method: 'GET',
@@ -48,7 +59,7 @@ describe('tech quiz', () => {
     });
   });
 
-  context('Answer Questions Incorrectly', () => {
+  context('Answer All Questions Incorrectly', () => {
     beforeEach(() => {
       cy.intercept({
         method: 'GET',

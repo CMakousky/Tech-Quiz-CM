@@ -14,6 +14,15 @@ describe('<Quiz />', () => {
     cy.get('[data-cy=quiz-question]').should('be.visible');
   });
 
+  it('should display the next question when an answer is submitted', () => {
+    cy.mount(<Quiz />);
+    cy.get('[data-cy=start-button]').click();
+    const question1 = cy.get('[data-cy=quiz-question-content]');
+    cy.get('[data-cy=button-0]').click();
+    const question2 = cy.get('[data-cy=quiz-question-content]');
+    expect(question1 !== question2);
+  });
+
   it('should display the score once 10 questions are answered', () => {
     cy.mount(<Quiz />);
     cy.get('[data-cy=start-button]').click();
