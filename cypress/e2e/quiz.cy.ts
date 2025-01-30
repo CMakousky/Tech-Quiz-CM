@@ -15,13 +15,24 @@ describe('tech quiz', () => {
   });
 
   context('Answer a Question', () => {
+    beforeEach(() => {
+      cy.intercept({
+        method: 'GET',
+        url: '/api/questions/random'
+      },
+      {
+        fixture: 'questions.json',
+        statusCode: 200
+      }
+      ).as('fixtureQuestions');
+      cy.visit('/');
+    });
     it('should display the next question when an answer is submitted', () => {
       cy.visit('/');
       cy.get('[data-cy=start-button]').click();
-      const question1 = cy.get('[data-cy=quiz-question-content]');
+      cy.get('[data-cy=quiz-question-content]').contains('question1');
       cy.get('[data-cy=button-0]').click();
-      const question2 = cy.get('[data-cy=quiz-question-content]');
-      expect(question1 !== question2);
+      cy.get('[data-cy=quiz-question-content]').contains('question2');
     });
   });
 
