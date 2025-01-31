@@ -32,7 +32,7 @@ Contact Christopher Makousky for inqueries on making contributions to this proje
 
 Run the "npm run test" script to execute the provided Cypress test schema. Alternatively, the "npm run cypress" script will allow for testing through the Cypress GUI. See the following video for a short demonstration of the test procedure.
 
-[Video Demo]()
+[Video Demo](https://drive.google.com/file/d/1fPmoc0BQ-kN7hSb453NeG13QI8K-w9hD/view?usp=sharing)
 
     GIVEN I am taking a tech quiz
 
