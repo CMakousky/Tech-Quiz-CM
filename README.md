@@ -18,11 +18,11 @@ A quiz program that allows aspiring developers to test their tech knowledge.
 
 ## Installation
 
-Run the "npm install" script for Node Package Manager to download all of the required dependancy files. Configure the .env file for your system specifications. Run the "npm run build" script to transpile the typescript code into javascript. Execute the "npm run seed" script to seed the MongoDB NoSQL database.
+Run the "npm install" script for Node Package Manager to download all of the required dependancy files. Configure the .env file for your system specifications. Execute the "npm run build" script to transpile the typescript code into javascript. Seed the MongoDB NoSQL database with the "npm run seed" script.
 
 ## Usage
 
-Execute the "npm run start:dev" script to start the server. Follow the on-screen prompts to test your tech knowledge.
+Execute the "npm run start" script to start the server. Follow the on-screen prompts to test your tech knowledge.
 
 ## Contributing
 
